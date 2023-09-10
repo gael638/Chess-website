@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    font-size: 9.3vh;
+}
+h1{
+    text-align: center;
+}
+
+
+
+
+.frame{
+    background-color: brown;
+    height: 90vh;
+    width: 90vh;
+    max-width: 800px;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.board{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: grey;
+    height: 95%;
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 12.5%;
+    margin: 1px 0;
+}
+.white,.black{
+    position: relative;
+    width: 12.5%;
+    height: 100%;
+    margin: 0 1px;
+}
+.white:hover,.black:hover{
+    .blanc,.noir,.selector{
+        border: 2px solid rgb(17, 255, 0);
+    }
+}
+.blanc,.noir{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.noir{
+    background-color: rgb(30, 48, 80);
+}
+.blanc{
+    background-color: rgb(99, 117, 148);
+}
+.selector{
+    position: absolute;
+    background-color: rgb(255, 218, 5);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+i{
+    position: absolute;
+    z-index: 0;
+}
+.king{
+    padding: 2px 8.5%;
+}
+.queen{
+    padding: 4% 3%;
+}
+.rook{
+    padding: 2px 9%;
+}
+.bishop{
+    padding: 2px 22%;
+}
+.knight{
+    padding: 2px 8.5%;
+}
+.pawn{
+    padding: 2px 20%;
+}
+
+.VII .pawn.fotsy{
+    z-index: 5;
+}
+.II .pawn.mainty{
+    z-index: 5;
+}
+
+.I .a5 .queen.mainty{
+    z-index: 5;
+}
+.VIII .a4 .queen.fotsy{
+    z-index: 5;
+}
+
+
+
+
+@keyframes tilt-shaking{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(5deg);}
+    50%{transform: rotate(0deg);}
+    75%{transform: rotate(-5deg);}
+    100%{transform: rotate(0deg);}
+}
