@@ -103,6 +103,27 @@ i{
     z-index: 5;
 }
 
+.I .a4 .king.mainty{
+    z-index: 5;
+}
+.VIII .a5 .king.fotsy{
+    z-index: 5;
+}
+
+.I .a1 .rook.mainty,.I .a8 .rook.mainty{
+    z-index: 5;
+}
+.VIII .a1 .rook.fotsy,.VIII .a8 .rook.fotsy{
+    z-index: 5;
+}
+
+.I .a3 .bishop.mainty,.I .a6 .bishop.mainty{
+    z-index: 5;
+}
+.VIII .a3 .bishop.fotsy,.VIII .a6 .bishop.fotsy{
+    z-index: 5;
+}
+
 
 
 
