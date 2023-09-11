@@ -48,38 +48,59 @@ function case_select(str){
 
         let piece = piece_case(str);
 
-            $(str+" .selector").css("z-index","3");
+        $(str+" .selector").css("z-index","3");
 
-            let col_value = "";
-            let row_value = "";
-            for(let i=0;i<8;i++){
+        let col_value = 0;
+        let row_value = 0;
+        for(let i=0;i<8;i++){
                 if(str.includes(col_class[i]) == true){
-                    col_value = col_class[i];
+                    col_value = i;
                 }
                 if(str.includes(row_class[i]) == true){
-                    row_value = row_class[i];
+                    row_value = i;
                 }
-            }
-            if($(piece).hasClass("pawn") == true){
-                if($(piece).hasClass("mainty") == true){
-                    if(str.includes("row.II") == true){
-                        for(let i=2;i<4;i++){
-                            $(row_class[i]+" "+col_value+" .selector").css("z-index","3");
-                            //console.log(11);
-                        }
-                    }
-                    else{
-                    }
-                }
+        }
 
-                if($(piece).hasClass("fotsy") == true){
-                    if(str.includes("row.VII") == true){
-                        for(let i=5;i>3;i--){
-                            $(row_class[i]+" "+col_value+" .selector").css("z-index","3");
-                        }
-                    }
-                }
+
+        if($(piece).hasClass("pawn") == true){
+            if($(piece).hasClass("mainty") == true){
+                pawn_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
             }
+
+            if($(piece).hasClass("fotsy") == true){
+                pawn_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }
+        }
+
+        if($(piece).hasClass("rook") == true){
+            if($(piece).hasClass("mainty") == true){
+                rook_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                rook_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }
+        }
+
+        if($(piece).hasClass("bishop") == true){
+            if($(piece).hasClass("mainty") == true){
+                bishop_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                bishop_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }
+        }
+
+        if($(piece).hasClass("king") == true){
+            if($(piece).hasClass("mainty") == true){
+                king_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                king_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }  
+        }
         
             
 
@@ -120,7 +141,7 @@ $(".white,.black").click(
                             coo,
                             piece_case(last_selected[last_selected.length-2]));
 
-                console.log(1);
+                //console.log(1);
                 case_select(coo);
             }
     }
