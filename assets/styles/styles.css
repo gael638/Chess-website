@@ -124,6 +124,13 @@ i{
     z-index: 5;
 }
 
+.I .a2 .knight.mainty,.I .a7 .knight.mainty{
+    z-index: 5;
+}
+.VIII .a2 .knight.fotsy,.VIII .a7 .knight.fotsy{
+    z-index: 5;
+}
+
 
 
 

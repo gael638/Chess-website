@@ -54,11 +54,15 @@ function piece_case(str){
 
 function piece_move(last_case = "",new_case = "",piece_class = ""){
     if(piece_class != 1){
-        if(piece_case(new_case) == 1){
+        console.log($(new_case+" .selector").css("z-index"));
+        if(piece_case(new_case) == 1 //&& $(new_case+" .selector").css("z-index")=="3"
+        ){
             $(last_case+" "+piece_class).css("z-index","0");
             $(new_case+" "+piece_class).css("z-index","5");
         }//rule when a piece move into an empty case
-        else{
+        else  if($(new_case+" .selector").css("z-index")!="3"){
+            wrong_move(last_case,new_case);
+        }else{
             if(piece_case(new_case).includes("mainty") == true && $(piece_class).hasClass("fotsy")==true 
                 || piece_case(new_case).includes("fotsy") == true && $(piece_class).hasClass("mainty")==true )
             {
@@ -225,10 +229,273 @@ function king_movement(row_class = [] , col_class = [] , row_value = 0 , col_val
             if(piece_case(row_class[j]+" "+col_class[i]) == 1){
                 $(row_class[j]+" "+col_class[i]+" .selector").css("z-index","3");
             }else{
-                if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color)){
-                    $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+                if($(piece_case(row_class[j]+" "+col_class[i])).hasClass(enemy_color)){
+                    $(row_class[j]+" "+col_class[i]+" .selector").css("z-index","3");
                 }
             }
         }
     }
+}
+
+
+
+function queen_movement(row_class = [] , col_class = [] , row_value = 0 , col_value = 0 , enemy_color = "" , str = ""){
+    for(let i=col_value-1;i<col_value+2;i++){
+        for(let j=row_value-1;j<row_value+2;j++){
+            if(piece_case(row_class[j]+" "+col_class[i]) == 1){
+                $(row_class[j]+" "+col_class[i]+" .selector").css("z-index","3");
+            }else{
+                if($(piece_case(row_class[j]+" "+col_class[i])).hasClass(enemy_color)){
+                    $(row_class[j]+" "+col_class[i]+" .selector").css("z-index","3");
+                }
+            }
+        }
+    }
+
+
+    for(let i=row_value+1,j=col_value+1;i<8;i++,j++){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color)){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+            break;
+        }
+    }
+    for(let i=row_value-1,j=col_value-1;i>=0;i--,j--){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color)){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+            break;
+        }    }
+    for(let i=row_value+1,j=col_value-1;i<8;i++,j--){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color)){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+            break;
+        }    }
+    for(let i=row_value-1,j=col_value+1;i>=0;i--,j++){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color)){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+            break;
+        }
+    }
+
+    for(let i=row_value+1;i<8;i++){
+        if(piece_case(row_class[i]+" "+col_class[col_value]) == 1){
+            $(row_class[i]+" "+col_class[col_value]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[col_value])).hasClass(enemy_color)){
+                $(row_class[i]+" "+col_class[col_value]+" .selector").css("z-index","3");
+            }
+            break;
+        }
+    }
+    for(let i=row_value-1;i>=0;i--){
+        if(piece_case(row_class[i]+" "+col_class[col_value]) == 1){
+            $(row_class[i]+" "+col_class[col_value]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[col_value])).hasClass(enemy_color)){
+                $(row_class[i]+" "+col_class[col_value]+" .selector").css("z-index","3");
+            }
+            break;
+        }
+    }
+    for(let i=col_value+1;i<8;i++){
+        if(piece_case(row_class[row_value]+" "+col_class[i]) == 1){
+            $(row_class[row_value]+" "+col_class[i]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[row_value]+" "+col_class[i])).hasClass(enemy_color)){
+                $(row_class[row_value]+" "+col_class[i]+" .selector").css("z-index","3");
+            }
+            break;
+        }
+    }
+    for(let i=col_value-1;i>=0;i--){
+        if(piece_case(row_class[row_value]+" "+col_class[i]) == 1){
+            $(row_class[row_value]+" "+col_class[i]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[row_value]+" "+col_class[i])).hasClass(enemy_color)){
+                $(row_class[row_value]+" "+col_class[i]+" .selector").css("z-index","3");
+            }
+            break;
+        }
+    }
+}
+
+
+
+function knight_movement(row_class = [] , col_class = [] , row_value = 0 , col_value = 0 , enemy_color = "" , str = ""){
+    for(let i=row_value-3,j=col_value;i<=row_value-1;i++,j++){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1 && i!=row_value-3){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color) && i!=row_value-3){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+        }      
+    }
+    for(let i=row_value-3,j=col_value;i<=row_value-1;i++,j--){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1 && i!=row_value-3){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color) && i!=row_value-3){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+        } 
+    }
+    for(let i=row_value+3,j=col_value;i>=row_value+1;i--,j++){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1 && i!=row_value+3){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color) && i!=row_value+3){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+        } 
+    }
+    for(let i=row_value+3,j=col_value;i>=row_value+1;i--,j--){
+        if(piece_case(row_class[i]+" "+col_class[j]) == 1 && i!=row_value+3){
+            $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+        }else{
+            if($(piece_case(row_class[i]+" "+col_class[j])).hasClass(enemy_color) && i!=row_value+3){
+                $(row_class[i]+" "+col_class[j]+" .selector").css("z-index","3");
+            }
+        } 
+    }
+}
+
+
+function case_select(str = "",last_case_log = []){
+    let row_class = [
+        ".row.I",
+        ".row.II",
+        ".row.III",
+        ".row.IV",
+        ".row.V",
+        ".row.VI",
+        ".row.VII",
+        ".row.VIII"
+    ];
+    let col_class = [
+        ".a1",
+        ".a2",
+        ".a3",
+        ".a4",
+        ".a5",
+        ".a6",
+        ".a7",
+        ".a8"
+    ];
+    let j = last_case_log.length-1;
+
+
+    if(last_case_log[j]!="" && last_case_log[j]!=str){
+        $(".selector").css("z-index","0");
+    }
+
+
+    if(str != last_case_log[j]){
+        //defining coordinate
+        let piece = piece_case(str);
+        let last_piece = piece_case(last_case_log[j]);
+        $(str+" .selector").css("z-index","3");
+        let col_value = 0;
+        let row_value = 0;
+        for(let i=0;i<8;i++){
+                if(str.includes(col_class[i]) == true){
+                    col_value = i;
+                }
+                if(str.includes(row_class[i]) == true){
+                    row_value = i;
+                }
+        }
+//--------------------------------------------------//
+        if(last_piece != 1 && piece == 1){
+            $(str+" .selector").css("z-index","0");
+        }
+
+        if($(piece).hasClass("pawn") == true){
+            //$(".selector").css("z-index","0");
+            if($(piece).hasClass("mainty") == true){
+                pawn_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                pawn_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }
+        }
+
+        if($(piece).hasClass("rook") == true){
+            if($(piece).hasClass("mainty") == true){
+                rook_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                rook_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }
+        }
+
+        if($(piece).hasClass("bishop") == true){
+            if($(piece).hasClass("mainty") == true){
+                bishop_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                bishop_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }
+        }
+
+        if($(piece).hasClass("king") == true){
+            if($(piece).hasClass("mainty") == true){
+                king_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                king_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }  
+        }
+
+        if($(piece).hasClass("queen") == true){
+            if($(piece).hasClass("mainty") == true){
+                queen_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                queen_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }  
+        }
+
+        if($(piece).hasClass("knight") == true){
+            if($(piece).hasClass("mainty") == true){
+                knight_movement(row_class,col_class,row_value,col_value,"fotsy" , str);
+            }
+
+            if($(piece).hasClass("fotsy") == true){
+                knight_movement(row_class,col_class,row_value,col_value,"mainty" , str);
+            }  
+        }
+    }
+
+
+    if(str == last_case_log[j]){
+        if($(str+" .selector").css("z-index")=="3"){
+            $(".selector").css("z-index","0");
+            last_case_log.push("");
+            return 1;
+        }else{
+            $(str+" .selector").css("z-index","3");
+        }
+    }
+    last_case_log.push(str);
 }
