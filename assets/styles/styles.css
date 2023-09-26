@@ -1,47 +1,256 @@
 *{
     box-sizing: border-box;
-    font-size: 9.3vh;
 }
 h1{
+    z-index: 3;
+    color : white;
     text-align: center;
 }
+
+body{
+    position: absolute;
+    width: 100vw;
+    height : 100vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    margin: 0;
+    padding: 0;
+
+
+    .body-image{
+    position: absolute;
+    }
+}
+
+
+
+
+
+
+.choice-box{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    
+    width: 40vw;
+    height: 50vh;
+    margin : 0 30vw;
+
+    z-index: -1;
+}
+.text{
+    display: block;
+    position: relative;
+
+    height: 20%;
+    width: 100%;
+    margin: 0;
+    padding: 4%;
+
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+.choice{
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    height: 80%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+.choice button{
+    display: flex;
+    flex-direction: column;
+
+    border: 0;
+
+    height: 50%;
+    width: 50%;
+}
+.choice button:nth-of-type(2),.choice button:nth-of-type(3){
+    background-color: green;
+    color: white;
+}
+.choice button:nth-of-type(1),.choice button:nth-of-type(4){
+    background-color: rgb(153, 255, 153);
+    color: black;
+}
+.choice button:hover{
+    transition: background-color 0.5s ease;
+    background-color: rgb(102, 102, 102);
+}
+.choice button i{
+    position: relative;
+    display: block;
+
+    height: 80%;
+
+    margin: 10% auto 0 auto;
+    padding: 0;
+}
+.choice button p{
+    position: relative;
+    display: block;
+
+    height: 30%;
+
+    text-align: center;
+    font-size: 2rem;
+
+    margin: 0 auto;
+}
+.control-buttons{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    top: 5%;
+    left: 1%;
+    width: 5%;
+    height: 15%;
+
+    font-size: 5em;
+}
+.control-buttons button{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40%;
+    background-color: rgb(74, 7, 7);
+}
+
 
 
 
 
 .frame{
     background-color: brown;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     height: 90vh;
     width: 90vh;
     max-width: 800px;
     max-height: 800px;
-    display: flex;
-    align-items: center;
+    
     margin: auto;
+
+    .frame-image{
+    position: absolute;
+    z-index: 0;
+}
+
+.letter{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: 0%;
+    width: 92%;
+    
+    top: 0;
+    margin: 0 auto;
+    padding: 0;
+
+    text-align: center;
+    font-size: 2.5vh;
+    color: #fff;
+}
+.number{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    rotate: 90deg;
+
+    height: 0%;
+    width: 92%;
+    left: 47%;
+    top : 47%;
+
+    font-size: 2.5vh;
+    text-align: center;
+    color:#fff;
+}
+.number.inverted{
+    top: -47%;
+    left: -47%;
+}
+.number.inverted div{
+    rotate: -90deg;;
+}
+.number div{
+    rotate: 90deg;
+    width: 12.5%;
+}
+.letter.inverted div{
+    rotate: 180deg;
+}
+.letter div{
+    width: 12.5%;
+}
+
+
+
+
 }
 .board{
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: grey;
-    height: 95%;
-    width: 95%;
-    margin: 0 auto;
+    background-color: black;
     overflow: hidden;
+
+    height: 92%;
+    width: 92%;
+    margin: 0 auto;
+    padding : 2px;
+    z-index: 1;
+
+    .row{
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+        height: 12.5%;
+
+        margin: 0;
+
+        .white,.black{
+            position: relative;
+
+            width: 12.5%;
+            height: 100%;
+
+            margin: 0;
+        }
+    }
 }
-.row{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 12.5%;
-    margin: 1px 0;
-}
-.white,.black{
-    position: relative;
-    width: 12.5%;
-    height: 100%;
-    margin: 0 1px;
-}
+
+
+
+
+
 .white:hover,.black:hover{
     .blanc,.noir,.selector{
         border: 2px solid rgb(17, 255, 0);
@@ -49,29 +258,64 @@ h1{
 }
 .blanc,.noir{
     position: absolute;
+
     width: 100%;
     height: 100%;
+
     z-index: 1;
+
+    .noir{
+        background-color: rgb(30, 48, 80);
+    }
+    .blanc{
+        background-color: rgb(99, 117, 148);
+    }
 }
-.noir{
-    background-color: rgb(30, 48, 80);
-}
-.blanc{
-    background-color: rgb(99, 117, 148);
+
+
+
+
+
+img{
+    width : 100%;
+    height: 100%;
 }
 .selector{
     position: absolute;
-    background-color: rgb(255, 218, 5);
+    background-color: rgba(255, 218, 5,50%);
+
     width: 100%;
     height: 100%;
+
+    border : 1px solid black;
     z-index: 0;
 }
-i{
+
+
+
+
+
+.row i,.choice i{
     position: absolute;
+    font-size: 9.3vh;
     z-index: 0;
 }
+
+.fotsy{
+    text-shadow: 0 0 5px #000;
+}
+.mainty{
+    rotate: 180deg;
+    text-shadow: 0 0 5px #fff;
+}
+
+
+
+
+
+
 .king{
-    padding: 2px 8.5%;
+    padding: 5% 12.5%;
 }
 .queen{
     padding: 4% 3%;
@@ -89,21 +333,15 @@ i{
     padding: 2px 20%;
 }
 
-.VII .pawn.fotsy{
-    z-index: 5;
-}
-.II .pawn.mainty{
+.VII .pawn.fotsy , .II .pawn.mainty{
     z-index: 5;
 }
 
-.I .a5 .queen.mainty{
-    z-index: 5;
-}
-.VIII .a4 .queen.fotsy{
-    z-index: 5;
+.I .a4 .queen.mainty , .VIII .a4 .queen.fotsy{
+    z-index: 0;
 }
 
-.I .a4 .king.mainty{
+.I .a5 .king.mainty{
     z-index: 5;
 }
 .VIII .a5 .king.fotsy{
@@ -118,17 +356,17 @@ i{
 }
 
 .I .a3 .bishop.mainty,.I .a6 .bishop.mainty{
-    z-index: 5;
+    z-index: 0;
 }
 .VIII .a3 .bishop.fotsy,.VIII .a6 .bishop.fotsy{
-    z-index: 5;
+    z-index: 0;
 }
 
 .I .a2 .knight.mainty,.I .a7 .knight.mainty{
-    z-index: 5;
+    z-index: 0;
 }
 .VIII .a2 .knight.fotsy,.VIII .a7 .knight.fotsy{
-    z-index: 5;
+    z-index: 0;
 }
 
 

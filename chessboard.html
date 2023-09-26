@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./assets/styles/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/deeb21ff06.js" crossorigin="anonymous"></script>
+        <script src="./assets/scripts/functions.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chessboard</title>
+    </head>
+    <body>
+        <img class="body-image" src="./assets/image/body_wood.jpg"/>
+        <!--<h1>CHESSBOARD</h1>-->
+        <div class="choice-box">
+            <p class="text">Promote pawn to?</p>
+            <div class="choice">
+                <button id="queen" value="1">
+                    <i class="queen fa-solid fa-chess-queen" ></i>
+                    <p>Queen</p>
+                </button>
+                <button id="rook" value="2">
+                    <i class="rook fa-solid fa-chess-rook" ></i>
+                    <p>Rook</p>
+                </button>
+                <button id="knight" value="3">
+                    <i class="knight fa-solid fa-chess-knight" ></i>
+                    <p>Knight</p>
+                </button>
+                <button id="bishop" value="4">
+                    <i class="bishop fa-solid fa-chess-bishop" ></i>
+                    <p>Bishop</p>
+                </button>
+            </div>
+        </div>
+        <div class="control-buttons">
+            <button class="restart" value="restart">
+                <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
+            </button>
+            <button class="back" value="back">
+                <i class="fa-solid fa-rotate-left" style="color: #ffffff;"></i>
+            </button>
+        </div>
+        <div class="frame">
+            <img class="frame-image" src="./assets/image/frame_wood.png"/>
+            <div class="letter inverted">
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+                <div>E</div>
+                <div>F</div>
+                <div>G</div>
+                <div>H</div>
+            </div>
+            <div class="number">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+            </div>
+            <div class="board">
+                <div class="row I">
+                    <div class="white a1">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a2">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a3">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a4">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a5">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a6">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a7">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a8">
+                        <div class="noir"></div>
+                    </div>
+                </div>
+
+                <div class="row II">
+                    <div class="black a1">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a2">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a3">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a4">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a5">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a6">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a7">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a8">
+                        <div class="blanc"></div>
+                    </div>
+                </div>
+
+                <div class="row III">
+                    <div class="white a1">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a2">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a3">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a4">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a5">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a6">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a7">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a8">
+                        <div class="noir"></div>
+                    </div>
+                </div>
+
+                <div class="row IV">
+                    <div class="black a1">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a2">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a3">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a4">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a5">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a6">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a7">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a8">
+                        <div class="blanc"></div>
+                    </div>
+                </div>
+
+                <div class="row V">
+                    <div class="white a1">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a2">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a3">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a4">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a5">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a6">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a7">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a8">
+                        <div class="noir"></div>
+                    </div>
+                </div>
+
+                <div class="row VI">
+                    <div class="black a1">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a2">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a3">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a4">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a5">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a6">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a7">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a8">
+                        <div class="blanc"></div>
+                    </div>
+                </div>
+
+                <div class="row VII">
+                    <div class="white a1">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a2">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a3">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a4">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a5">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a6">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a7">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a8">
+                        <div class="noir"></div>
+                    </div>
+                </div>
+
+                <div class="row VIII">
+                    <div class="black a1">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a2">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a3">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a4">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a5">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a6">
+                        <div class="blanc"></div>
+                    </div>
+                    <div class="black a7">
+                        <div class="noir"></div>
+                    </div>
+                    <div class="white a8">
+                        <div class="blanc"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="number inverted">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+            </div>
+            <div class="letter">
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+                <div>E</div>
+                <div>F</div>
+                <div>G</div>
+                <div>H</div>
+            </div>
+        </div>
+        <script src="./assets/scripts/script.js"></script>
+    </body>
+</html>
