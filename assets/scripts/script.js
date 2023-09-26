@@ -603,11 +603,7 @@ $(".back").on("click",
         if(GAME_STATE_LOG.length > 1){
             loadGameState(GAME_STATE_LOG[GAME_STATE_LOG.length - 2]);
             GAME_STATE_LOG.pop();
-            if(TURN == 1){
-                TURN = 0;
-            }else{
-                TURN = 1;
-            }
+            TURN++;
         }
     }
 );
