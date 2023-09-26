@@ -379,3 +379,25 @@ img{
     75%{transform: rotate(-5deg);}
     100%{transform: rotate(0deg);}
 }
+
+
+@media (max-width: 100vh) {
+    .frame{
+        height: 90vw;
+        width: 90vw;
+    }
+    .row i{
+        font-size: 9.3vw;
+    }
+    .control-buttons{
+        top: 1%;
+        left: 5%;
+        flex-direction: row;
+        width: 15%;
+        height: 5%;
+    }
+    .control-buttons button{
+        width: 40%;
+        height: 100%;
+    }
+}
