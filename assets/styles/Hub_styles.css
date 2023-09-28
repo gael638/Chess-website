@@ -82,18 +82,13 @@ footer i{
 }
 
 @media (max-width: 178vh) {
-    *{
-        overflow: hidden;
-    }
     img{
         left: calc(50vw - 88vh);
     }
     div{
         top: 20vh;
-        overflow: hidden;
-        padding-left: 0;
     }
-    h1{
+    div h1{
         position: absolute;
         display: block;
         width: 80vw;
