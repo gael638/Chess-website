@@ -400,7 +400,7 @@ img{
         width: 40%;
         height: 100%;
     }
-    .letter,.number{
+    .letter div,.number div{
         font-size: 2.5vw;
     }
 }
