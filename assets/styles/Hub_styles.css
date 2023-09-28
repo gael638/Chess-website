@@ -82,6 +82,9 @@ footer i{
 }
 
 @media (max-width: 178vh) {
+    *{
+        overflow: hidden;
+    }
     img{
         left: calc(50vw - 88vh);
     }
@@ -95,6 +98,7 @@ footer i{
         display: block;
         width: 80vw;
         margin: 0 auto;
+        font-size: 20vw;
     }
 }
 
