@@ -87,6 +87,8 @@ footer i{
     }
     div{
         top: 20vh;
+        overflow: hidden;
+        padding-left: 0;
     }
     h1{
         position: absolute;
